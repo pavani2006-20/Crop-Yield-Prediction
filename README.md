@@ -118,3 +118,14 @@ The program displays:
 **Pavani Bathi**
 
 GitHub: https://github.com/pavani2006-20
+
+
+## 📊 Results
+
+### Actual vs Predicted Crop Yield
+
+![Actual vs Predicted](actual_vs_predicted.png)
+
+### Feature Importance
+
+![Feature Importance](feature_importance.png)
