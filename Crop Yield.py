@@ -51,9 +51,10 @@ plt.xlabel("Actual Yield")
 plt.ylabel("Predicted Yield")
 plt.title("Actual vs Predicted Crop Yield")
 plt.grid(True)
+plt.savefig("actual_vs_predicted.png", dpi=300, bbox_inches="tight")
 plt.show()
 
-# Feature importance
+# Feature importance graph
 importance = model.feature_importances_
 
 plt.figure(figsize=(8, 5))
@@ -62,20 +63,6 @@ plt.xlabel("Features")
 plt.ylabel("Importance")
 plt.title("Feature Importance")
 plt.xticks(rotation=30)
+plt.grid(True)
+plt.savefig("feature_importance.png", dpi=300, bbox_inches="tight")
 plt.show()
-
-# New crop prediction
-crop = "Rice"
-
-new_data = pd.DataFrame({
-    "Crop": [encoder.transform([crop])[0]],
-    "Rainfall": [1200],
-    "Temperature": [28],
-    "Fertilizer": [150],
-    "Pesticide": [50]
-})
-
-result = model.predict(new_data)
-
-print("\nCrop:", crop)
-print("Predicted Yield:", round(result[0], 2))
